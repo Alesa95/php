@@ -5,7 +5,7 @@
 <h2>Listado de películas</h2>
 <table>
     <tr>
-        <th>Nombre</th>
+        <th>Título</th>
         <th>Fecha de estreno</th>
     </tr>
     <?php
@@ -22,16 +22,16 @@
         $stmt -> execute();
         //  Guardamos las películas obtenidas de la BD en un array multidimensional
         while ($row = $stmt -> fetch()){
-            $pelicula = [$row["nombre"], $row["fecha_estreno"]];
+            $pelicula = [$row["titulo"], $row["fecha_estreno"]];
             array_push($peliculas, $pelicula);
         }
         //  Mostramos el contenido del array donde hemos guardado las películas
         foreach ($peliculas as $pelicula) {
-            list($nombre, $fecha_estreno) = $pelicula;
+            list($titulo, $fecha_estreno) = $pelicula;
             echo "<tr>";
-            echo "<td>$nombre</td>";
+            echo "<td>$titulo</td>";
             echo "<td>$fecha_estreno</td>";
             echo "</tr>";
         }
     ?>
-</tabla>
+</table>
