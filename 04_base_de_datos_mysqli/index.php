@@ -18,40 +18,46 @@
     ?>
     <br>
 
-    <table>
-        <tr>
-            <th>Id</th>
-            <th>Título</th>
-            <th>Fecha de estreno</th>
-        </tr>
-    <?php
-        $sql = "SELECT * FROM peliculas";
-        $resultado = $conexion -> query($sql);
-        
-        if ($resultado -> num_rows > 0) {
-          // output data of each row
-          while($row = $resultado->fetch_assoc()) {
-            $id = $row["id"];
-            echo "<tr>";
-            echo "<td>" . $row["id"]. "</td>";
-            echo "<td>" . $row["titulo"]. "</td>";
-            echo "<td>" . $row["fecha_estreno"]. "</td>";
-            echo "<form method='POST' action=''>";
-            echo "<input type='hidden' name='id' value=$id>";
-            echo "<input type='hidden' name='accion' value='borrar'>";
-            echo "<td><input type='submit' name='borrar' value='Borrar'></td>";
-            echo "</form>";
-            echo "<form method='POST' action='modificar_pelicula.php'>";
-            echo "<input type='hidden' name='id' value=$id>";
-            echo "<input type='hidden' name='accion' value='modificar'>";
-            echo "<td><input type='submit' name='modificar' value='Modificar'></td>";
-            echo "</form>";
-            echo "</tr>";
-          }
-        } else {
-            echo "No se han encontrado películas";
-        }      
-    ?>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Título</th>
+                <th scope="col">Fecha de estreno</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php
+            $sql = "SELECT * FROM peliculas";
+            $resultado = $conexion -> query($sql);
+            
+            if ($resultado -> num_rows > 0) {
+            // output data of each row
+            while($row = $resultado->fetch_assoc()) {
+                $id = $row["id"];
+                echo "<tr>";
+                echo "<td>" . $row["id"]. "</td>";
+                echo "<td>" . $row["titulo"]. "</td>";
+                echo "<td>" . $row["fecha_estreno"]. "</td>";
+                echo "<form method='POST' action=''>";
+                echo "<input type='hidden' name='id' value=$id>";
+                echo "<input type='hidden' name='accion' value='borrar'>";
+                echo "<td><input type='submit' name='borrar' value='Borrar'></td>";
+                echo "</form>";
+                echo "<form method='POST' action='modificar_pelicula.php'>";
+                echo "<input type='hidden' name='id' value=$id>";
+                echo "<input type='hidden' name='accion' value='modificar'>";
+                echo "<td><input type='submit' name='modificar' value='Modificar'></td>";
+                echo "</form>";
+                echo "</tr>";
+            }
+            } else {
+                echo "No se han encontrado películas";
+            }      
+        ?>
+        </tbody>
     </table>
 </body>
 </html>
