@@ -18,25 +18,25 @@
             
 
             if (empty($temp_nombre)) {
-                $err_nombre = "*El nombre es obligatorio";
+                $err_nombre = "El nombre es obligatorio";
             } 
 
             if (empty($temp_precio)) {
-                $err_precio = "*El precio es obligatorio";
+                $err_precio = "El precio es obligatorio";
             } 
 
             if (empty($temp_consola)) {
-                $err_consola = "*Selecciona una consola";
+                $err_consola = "Selecciona una consola";
             }
         }
     ?>
 
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
         Nombre: <input type="text" name="nombre">
-        <span class="error"><?php if (isset($err_nombre)) echo $err_nombre; ?></span>
+        <span class="error">* <?php if (isset($err_nombre)) echo $err_nombre; ?></span>
         <br><br>
         Precio: <input type="text" name="precio">
-        <span class="error"><?php if (isset($err_precio)) echo $err_precio; ?></span>
+        <span class="error">* <?php if (isset($err_precio)) echo $err_precio; ?></span>
         <br><br>
         <select name="consola">
             <option value="" selected disabled hidden>Selecciona consola</option>
@@ -44,7 +44,7 @@
             <option value="ps5">Playstation 5</option>
             <option value="switch">Nintendo Switch</option>
         </select>
-        <span class="error"><?php if (isset($err_consola)) echo $err_consola; ?></span>
+        <span class="error">* <?php if (isset($err_consola)) echo $err_consola; ?></span>
         <br><br>
         <input type="submit" value="Enviar">
     </form>
