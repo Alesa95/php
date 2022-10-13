@@ -12,9 +12,11 @@
 
     <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $temp_nombre = $_POST["nombre"];
-            $temp_precio = $_POST["precio"];
-            if (isset($_POST["consola"])) $temp_consola = $_POST["consola"];
+            require 'depurar.php';
+            
+            $temp_nombre = depurar($_POST["nombre"]);
+            $temp_precio = depurar($_POST["precio"]);
+            if (isset($_POST["consola"])) $temp_consola = depurar($_POST["consola"]);
             
 
             if (empty($temp_nombre)) {
