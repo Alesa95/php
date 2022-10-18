@@ -1,13 +1,9 @@
 <?php 
-    $server = 'localhost';
-    $user = 'root';
-    $password = '';
-    $dbname = 'videojuegos';
+    $servidor = 'localhost';
+    $usuario = 'root';
+    $contrasena = '';
+    $base_datos = 'videojuegos';
 
-    try {
-        $dsn = "mysql:host=$server;dbname=$dbname";
-        $dbh = new PDO($dsn, $user, $password);
-    } catch (PDOException $e) {
-        echo $e->getMessage();
-    }
+    $conexion = new Mysqli($servidor, $usuario, $contrasena, $base_datos) 
+        or die("Error en la conexión");
 ?>
