@@ -1,5 +1,5 @@
 <?php
-    require 'database.php';
+    require 'util/database.php';
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $id = $titulo = $fecha_estreno = ''; 
