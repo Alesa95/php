@@ -19,10 +19,10 @@
     <br>
 
     <table class="table">
-        <thead class="thead-dark">
+        <thead class="table-dark">
             <tr>
-                <th scope="col">Id</th>
                 <th scope="col">Título</th>
+                <th scope="col">Imagen</th>
                 <th scope="col">Fecha de estreno</th>
                 <th></th>
                 <th></th>
@@ -37,21 +37,29 @@
             // output data of each row
             while($row = $resultado->fetch_assoc()) {
                 $id = $row["id"];
-                echo "<tr>";
-                echo "<td>" . $row["id"]. "</td>";
-                echo "<td>" . $row["titulo"]. "</td>";
-                echo "<td>" . $row["fecha_estreno"]. "</td>";
-                echo "<form method='POST' action=''>";
-                echo "<input type='hidden' name='id' value=$id>";
-                echo "<input type='hidden' name='accion' value='borrar'>";
-                echo "<td><input type='submit' name='borrar' value='Borrar'></td>";
-                echo "</form>";
-                echo "<form method='POST' action='modificar_pelicula.php'>";
-                echo "<input type='hidden' name='id' value=$id>";
-                echo "<input type='hidden' name='accion' value='modificar'>";
-                echo "<td><input type='submit' name='modificar' value='Modificar'></td>";
-                echo "</form>";
-                echo "</tr>";
+                $titulo = $row["titulo"];
+                $imagen = $row["imagen"];
+                $fecha_estreno = $row["fecha_estreno"];
+                ?>
+                <tr>
+                <td><?php echo $titulo ?></td>
+                <td>
+                    <img width="60" height="100" src="./images/<?php echo $row['imagen']; ?>">
+                </td>
+                
+                <td><?php echo $fecha_estreno ?></td>
+                <form method='POST' action=''>
+                <input type='hidden' name='id' value=<?php echo $id ?>>
+                <input type='hidden' name='accion' value='borrar'>
+                <td><input type='submit' name='borrar' value='Borrar' class='btn btn-primary'></td>
+                </form>
+                <form method='DELETE' action='modificar_pelicula.php'>
+                <input type='hidden' name='id' value=<?php echo $id ?>>
+                <input type='hidden' name='accion' value='modificar'>
+                <td><input type='submit' name='modificar' value='Modificar' class='btn btn-primary'></td>
+                </form>
+                </tr>
+            <?php
             }
             } else {
                 echo "No se han encontrado películas";
