@@ -7,6 +7,8 @@
             $sql = "DELETE FROM peliculas WHERE id=$id";
 
             if ($conexion -> query($sql) === TRUE) {
+
+                //unlink("images/" . filename);
                 echo "Record deleted successfully";
             } else {
                 echo "Error deleting record: " . $conn->error;
