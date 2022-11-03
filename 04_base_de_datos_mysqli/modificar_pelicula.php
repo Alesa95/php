@@ -14,6 +14,7 @@
                 while($row = $resultado->fetch_assoc()) {
                     $titulo = $row["titulo"];
                     $fecha_estreno = $row["fecha_estreno"];
+                    $imagen = $row["imagen"];
                 }
             }
         }
@@ -63,8 +64,12 @@
                     </div>
                     <input type="hidden" name="id" value="<?php echo $id ?>">
                     <input type="hidden" name="accion" value="actualizar">
-                    <input type="submit" value="Actualizar">
+                    <button type="submit" class="btn btn-primary">Actualizar</button>
+                    <a href="index.php" class="btn btn-secondary" role="button">Volver</a>
                 </form>
+            </div>
+            <div class="col-6">
+                <img width="400" height="600" src="./images/<?php echo $imagen ?>" alt="Imagen" class="img-thumbnail">
             </div>
         </div>
     </div>

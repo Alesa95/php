@@ -3,6 +3,18 @@
         
         if($_POST["accion"] == "borrar") {
             $id = $_POST["id"];
+
+            //  Para borrar la imagen
+            $sql = "SELECT * FROM peliculas WHERE id=$id";
+            $resultado = $conexion -> query($sql);
+
+            if ($resultado -> num_rows > 0) {
+                while($row = $resultado->fetch_assoc()) {
+                    $imagen = $row["imagen"];
+                }
+            }
+            unlink("images/" . $imagen);
+            //  Fin borrar imagen
         
             $sql = "DELETE FROM peliculas WHERE id=$id";
 

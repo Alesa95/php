@@ -27,6 +27,7 @@
                     <th scope="col">Fecha de estreno</th>
                     <th></th>
                     <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -49,18 +50,25 @@
                     </td>
                     
                     <td><?php echo $fecha_estreno ?></td>
-                    <form method='POST' action=''>
+                    <form method='POST' action='modificar_pelicula.php'>
                         <input type='hidden' name='id' value=<?php echo $id ?>>
-                        <input type='hidden' name='accion' value='borrar'>
+                        <input type='hidden' name='accion' value='modificar'>
                         <td>
-                            <input type='submit' name='borrar' value='Borrar' class='btn btn-primary'>
+                            <input type='submit' name='modificar' value='Ver' class='btn btn-primary'>
                         </td>
                     </form>
                     <form method='POST' action='modificar_pelicula.php'>
                         <input type='hidden' name='id' value=<?php echo $id ?>>
                         <input type='hidden' name='accion' value='modificar'>
                         <td>
-                            <input type='submit' name='modificar' value='Modificar' class='btn btn-primary'>
+                            <input type='submit' name='modificar' value='Modificar' class='btn btn-secondary'>
+                        </td>
+                    </form>
+                    <form method='POST' action=''>
+                        <input type='hidden' name='id' value=<?php echo $id ?>>
+                        <input type='hidden' name='accion' value='borrar'>
+                        <td>
+                            <input type='submit' name='borrar' value='Borrar' class='btn btn-danger'>
                         </td>
                     </form>
                     </tr>
