@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Manga; 
 
 class MangasController extends Controller
 {
@@ -20,11 +21,14 @@ class MangasController extends Controller
             ["Bloom into you", "Nio Nakatani", "Planeta Cómic"],
             ["Goodbye my Rose Garden", "Dr. Pepperco", "Arechi Manga"]
         ];
+
+        $mangas3 = Manga::all();
         
         return view('mangas/index', [   
                                         'mangas' => $mangas, 
                                         'mensaje' => $mensaje,
-                                        'mangas2' => $mangas2
+                                        'mangas2' => $mangas2,
+                                        'mangas3' => $mangas3
                                     ]);
     }
 
@@ -35,7 +39,7 @@ class MangasController extends Controller
      */
     public function create()
     {
-        //
+        return view('mangas/create');
     }
 
     /**
