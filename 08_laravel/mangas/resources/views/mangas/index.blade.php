@@ -11,6 +11,8 @@
     <div class="container">
         <h1>{{ $mensaje }}</h1>
 
+        <a href="{{route('mangas.create')}}" class="btn btn-link">Crear manga</a>
+
         @foreach ($mangas as $manga)
             <p>{{ $manga }}</p>
         @endforeach
@@ -40,12 +42,26 @@
                     <th>Título</th>
                     <th>Autor/a</th>
                     <th>Editorial</th>
+                    <th></th>
+                    <th></th>
                 </tr>
                 @foreach ($mangas3 as $manga)
                     <tr>
-                        <td>{{ $manga->titulo }} </td>
-                        <td>{{ $manga->autor }} </td>
-                        <td>{{ $manga->editorial }} </td>
+                        <td>{{ $manga->titulo }}</td>
+                        <td>{{ $manga->autor }}</td>
+                        <td>{{ $manga->editorial }}</td>
+                        <td>
+                            <form method="get" action="{{ route('mangas.show', ['manga' => $manga -> id]) }}">
+                                <button class="btn btn-primary" type="submit">Ver</button>
+                            </form>
+                        </td>
+                        <td>
+                            <form method="post" action="{{ route('mangas.destroy', ['manga' => $manga -> id]) }}">
+                                {{ csrf_field() }}
+                                {{ method_field('DELETE') }}
+                                <button class="btn btn-danger" type="submit">Borrar</button>
+                            </form>
+                        </td>
                     </tr>
                 @endforeach
             </thead>

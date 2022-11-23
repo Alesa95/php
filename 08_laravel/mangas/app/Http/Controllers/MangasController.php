@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Manga; 
+use DB;
 
 class MangasController extends Controller
 {
@@ -50,7 +51,13 @@ class MangasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $manga = new Manga;
+        $manga -> titulo = $request -> input('titulo');
+        $manga -> autor = $request -> input('autor');
+        $manga -> editorial = $request -> input('editorial');
+        $manga -> save();
+
+        return redirect ('mangas');
     }
 
     /**
@@ -61,7 +68,8 @@ class MangasController extends Controller
      */
     public function show($id)
     {
-        //
+        $manga = Manga::find($id);
+        return view('mangas/show', ['manga' => $manga]);
     }
 
     /**
@@ -95,6 +103,7 @@ class MangasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('mangas') -> where('id', '=', $id) -> delete();
+        return redirect('mangas');
     }
 }
