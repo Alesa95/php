@@ -10,27 +10,16 @@
     <!-- JQuery 3.6.1 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> 
 </head>
-<body>
-    <script>
-        function darkMode () {
-            $("table").removeClass("table")
-            $("table").addClass("table table-dark");
-            $("div.container").addClass("bg-dark");
-            $("h1,h2,h3,h4,p").addClass("text-light");
-        }
-
-        function lightMode () {
-            $("table").removeClass("table table-dark")
-            $("table").addClass("table");
-            $("div.container").removeClass("bg-dark");
-            $("h1,h2,h3,h4,p").removeClass("text-light");
-        }
-    </script>
+<body onload="checkMode();">
 
     <div class="container">
+        @include('header')
+
         <h1>{{ $mensaje }}</h1>
 
         <a href="{{route('mangas.create')}}" class="btn btn-link">Crear manga</a>
+
+        {{--
 
         @foreach ($mangas as $manga)
             <p>{{ $manga }}</p>
@@ -55,14 +44,18 @@
 
         <br><br>
 
+        --}}
+
         <h2>Listado de mangas</h2>
 
         <br>
 
+        <!--
         <div class="btn-group" role="group" aria-label="Basic example">
             <button type="button" onclick="lightMode()" class="btn btn-light shadow p-3 ">Modo Claro</button>
             <button type="button" onclick="darkMode()" class="btn btn-dark shadow">Modo Oscuro</button>
         </div>
+        -->
 
         <br><br>
 
