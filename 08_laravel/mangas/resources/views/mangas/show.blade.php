@@ -14,12 +14,25 @@
     <div class="container">
         @include('header')
 
+        <br><br
+
         <div class="row">
-            <h1>Información de {{ $manga -> titulo }}</h1>
             <div class="col-9">
-                <p>Títutlo: {{ $manga -> titulo }}</p>
-                <p>Autor/a: {{ $manga -> autor }}</p>
-                <p>Editorial: {{ $manga -> editorial }}</p>
+                <div class="card text-center">
+                    <div class="card-header">
+                        Mostrando la info de {{ $manga -> titulo }}
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Títutlo: {{ $manga -> titulo }}</h5>
+                        <br>
+                        <p class="card-text">Autor/a: {{ $manga -> autor }}</p>
+                        <p class="card-text">Editorial: {{ $manga -> editorial }}</p>
+                        <a href="#" class="btn btn-primary">Editar</a>
+                    </div>
+                    <div class="card-footer text-muted">
+                        Editado por última vez el {{ $manga -> updated_at }}
+                    </div>
+                </div>
             </div>
         </div>
     </div>
