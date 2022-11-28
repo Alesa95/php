@@ -80,7 +80,8 @@ class MangasController extends Controller
      */
     public function edit($id)
     {
-        //
+        $manga = Manga::find($id);
+        return view('mangas/edit', ['manga' => $manga]);
     }
 
     /**
@@ -92,7 +93,14 @@ class MangasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $manga = Manga::find($id);
+
+        $manga -> titulo = $request -> input('titulo');
+        $manga -> autor = $request -> input('autor');
+        $manga -> editorial = $request -> input('editorial');
+        $manga -> save();
+
+        return redirect ('mangas');
     }
 
     /**
