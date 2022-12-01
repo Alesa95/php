@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoriasController;
+use App\Http\Controllers\ProductosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,5 +18,7 @@ use App\Http\Controllers\CategoriasController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('/productos', ProductosController::class);
 
 Route::resource('/categorias', CategoriasController::class);
