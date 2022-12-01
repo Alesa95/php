@@ -14,7 +14,7 @@
     <div class="container">
         @include('header')
 
-        <br><br
+        <br><br>
 
         <div class="row">
             <div class="col-9">
