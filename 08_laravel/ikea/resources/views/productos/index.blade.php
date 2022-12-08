@@ -11,6 +11,13 @@
     <ul>
     @foreach($productos as $producto)
         <li>{{ $producto -> nombre }} - {{ $producto -> categoria -> nombre }}</li>
+        <ul>
+        @foreach($producto->tiendas as $tienda)
+            <li>
+                {{ $tienda -> nombre }}
+            </li>
+        @endforeach
+        </ul>
     @endforeach
     </ul>
 </body>
