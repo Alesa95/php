@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Tienda;
 
 class TiendasController extends Controller
 {
@@ -13,7 +14,13 @@ class TiendasController extends Controller
      */
     public function index()
     {
-        //
+        $tiendas = Tienda::all();
+
+        return view('tiendas/index',
+            [
+                'tiendas' => $tiendas
+            ]
+        );
     }
 
     /**
@@ -45,7 +52,13 @@ class TiendasController extends Controller
      */
     public function show($id)
     {
-        //
+        $tienda = Tienda::find($id);
+
+        return view('tiendas/show',
+            [
+                'tienda' => $tienda
+            ]
+        );
     }
 
     /**
