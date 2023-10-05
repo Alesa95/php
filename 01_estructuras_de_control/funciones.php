@@ -27,7 +27,7 @@
         return $num1 + $num2;
     }
     ?>
-
+ 
     <?php
     echo "<h3>" . sumaDos(3) . "</h3>";
     echo "<h3>" . sumaDos(1,3) . "</h3>";
