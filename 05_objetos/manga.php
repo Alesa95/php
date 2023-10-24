@@ -9,7 +9,7 @@ class Manga {
         $this -> editorial = $editorial;
         $this -> paginas = $paginas;
     }
-
+    /*
     function setTitulo($titulo) {
         $this -> titulo = $titulo;
     }
@@ -33,5 +33,6 @@ class Manga {
     function getPaginas() {
         return $this -> paginas;
     }
+    */
 }
 ?>

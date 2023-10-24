@@ -6,6 +6,7 @@
     <?php
         require 'util/database.php';
         require 'borrar_pelicula.php';
+        require '../05_objetos/conexion.php';
     ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -33,6 +34,9 @@
             <tbody>
             <?php
                 $sql = "SELECT * FROM peliculas";
+                //$resultado = $conexion -> query($sql);
+                $obj_conexion = new Conexion('localhost','root','','db_peliculas');
+                $conexion = $obj_conexion -> conexion;
                 $resultado = $conexion -> query($sql);
                 
                 if ($resultado -> num_rows > 0) {
