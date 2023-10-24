@@ -1,10 +1,10 @@
 <?php
 class Manga {
-    public $titulo;
-    public $editorial;
-    public $paginas;
+    public string $titulo;
+    public string $editorial;
+    public int $paginas;
 
-    function __construct($titulo, $editorial, $paginas) {
+    function __construct(string $titulo, string $editorial, int $paginas) {
         $this -> titulo = $titulo;
         $this -> editorial = $editorial;
         $this -> paginas = $paginas;
