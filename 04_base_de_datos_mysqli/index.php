@@ -80,7 +80,7 @@
                 }
                 } else {
                     echo "No se han encontrado películas";
-                }      
+                }  
             ?>
             </tbody>
         </table>

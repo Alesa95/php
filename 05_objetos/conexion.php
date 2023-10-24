@@ -14,5 +14,9 @@ class Conexion {
         $this -> conexion = new Mysqli($servidor, $usuario, $contrasena, $base_datos) 
             or die("Error en la conexión");
     }
+
+    function closeConection() {
+        $conexion -> close();
+    }
 }
 ?>
