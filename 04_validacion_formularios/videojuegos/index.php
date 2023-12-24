@@ -19,15 +19,15 @@
             if (isset($_POST["consola"])) $temp_consola = depurar($_POST["consola"]);
             
 
-            if (empty($temp_nombre)) {
+            if (strlen($temp_nombre) > 0) {
                 $err_nombre = "El nombre es obligatorio";
             } 
 
-            if (empty($temp_precio)) {
+            if (strlen($temp_precio) > 0) {
                 $err_precio = "El precio es obligatorio";
             } 
 
-            if (empty($temp_consola)) {
+            if (strlen($temp_consola) > 0) {
                 $err_consola = "Selecciona una consola";
             }
         }

@@ -3,7 +3,7 @@
             $_POST["formulario"] == "insertar") {
 
         //  Validamos el título
-        if (empty($_POST["titulo"])) {
+        if (strlen($_POST["titulo"]) > 0) {
             $err_titulo = "*El título es obligatorio";
         } else {
             $temp_titulo = $_POST["titulo"];
@@ -15,7 +15,7 @@
             }
         }
         //  Validamos la duración
-        if (empty($_POST["duracion"])) {
+        if (strlen($_POST["duracion"]) > 0) {
             $err_duracion = "*La duración es obligatoria";
         } else {
             $temp_duracion = $_POST["duracion"];
@@ -32,7 +32,7 @@
             }
         }
         //  Validamos la fecha de estreno
-        if (empty($_POST["fecha_estreno"])) {
+        if (strlen($_POST["fecha_estreno"]) > 0) {
             $err_fecha_estreno = "*La fecha de estreno es obligatoria";
         } else {
             $fecha_estreno = $_POST["fecha_estreno"];
