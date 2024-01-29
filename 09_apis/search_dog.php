@@ -22,13 +22,8 @@
 
     foreach($breeds as $key => $value) {
         $subBreed = false;
-        //echo "<p>Key: $key</p>";
         foreach($value as $subValue) {
-            $subBreed = true;
-            //echo "<p>Key: $key</p>";
-            //echo "<p>Subvalue: $subValue</p>";
             $subBreed = $key . "/" . $subValue;
-            //$subBreedA = $breed . "-" . $subBreed;
             array_push($breeds_normalized, $subBreed);
         }
         if(!$subBreed) {
