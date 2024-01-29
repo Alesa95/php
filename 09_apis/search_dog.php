@@ -23,6 +23,7 @@
     foreach($breeds as $key => $value) {
         $subBreed = false;
         foreach($value as $subValue) {
+            //  Al asignarse un valor a $subBreed es lo mismo que decir que pasa a ser TRUE
             $subBreed = $key . "/" . $subValue;
             array_push($breeds_normalized, $subBreed);
         }
@@ -45,7 +46,6 @@
     if($_SERVER["REQUEST_METHOD"] == "POST") {
         $breed = $_POST["breed"];
         $apiUrl = "https://dog.ceo/api/breed/$breed/images/random";
-        echo $apiUrl;
 
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_URL, $apiUrl);
