@@ -1,4 +1,12 @@
 <?php
+    /**
+     * ESTO ES UN ENDPOINT DE UNA API. NO DEBE ABRIRSE DIRECTAMENTE DESDE EL 
+     * NAVEGADOR
+     * 
+     * PARA INTERACTUAR CON ESTE FICHERO, ENVÍA MENSAJES HTTP DESDE UN 
+     * PROGRAMA QUE PERMITA ENVIAR MENSAJES HTTP COMO POSTMAN
+     */
+    
     header("Content-Type: application/json");
     include 'conexion.php';
     
