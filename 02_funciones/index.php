@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test de funciones</title>
-    <?php require_once 'temperatura.php' ?>
+    <?php require_once 'funciones/temperatura.php' ?>
 </head>
 <body>
     <h1>Test de funciones</h1>

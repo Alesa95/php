@@ -1,0 +1,6 @@
+{
+    "name": "aleja/01_temario",
+    "require": {
+        "phpunit/phpunit": "^11.4"
+    }
+}

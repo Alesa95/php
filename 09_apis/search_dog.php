@@ -32,7 +32,6 @@
         }
     }
     //print_r($breeds_normalized);
-
 ?>
     <form action="" method="post">
         <select name="breed">
